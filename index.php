@@ -16,7 +16,7 @@
 
     <div class="container">
 
-        <h2 class="page-header">本の一覧</h2>
+        <h2 class="page-header">書籍リスト一覧</h2>
         <table class="table table-hover">
             <tr>
                 <th>No</th>
