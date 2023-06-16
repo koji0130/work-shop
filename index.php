@@ -11,7 +11,7 @@
 <body class="container">
 
     <header>
-      <h1 class="page-header">Webアプリ開発ワークショップ</h1>
+        <a href="/index"><h1 class="page-header">Webアプリ開発ワークショップ</h1></a>
     </header>
 
     <div class="container">
@@ -39,8 +39,11 @@
             <tr>
                 <td>{{ $book->id }}</td>
                 <td>{{ $book->title }}</td>
-                <td>{{ $book->author->name}}</td>
+                <td>著者名は後ほど解説します</td>
                 <td>{{ $book->price}}円</td>
                 <td>{{ $book->created_at }}</td>
             </tr>
 @endforeach
+<!-- ③ -->
+<!-- モデルにリレーションを定義後に、下記追加 -->
+{{ $book->author->name}}

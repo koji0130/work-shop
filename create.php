@@ -31,15 +31,34 @@
 <!-- ③ -->
 
 <div class="form-group">
-    <form action="author/create" method="post">
+    <form action="/author/create" method="post">
     @csrf
-    <input type="text" name="name" value="" class="form-control" placeholder="著者名" required>
+    <input type="text" name="authorName" value="" class="form-control" placeholder="著者名" required>
     <button type="submit" class="btn btn-success pull-right" >追加</button>
     </form>
 </div>
 
 <!-- ④ -->
+    <div class="container">
+        <h2 class="page-header">本を登録する</h2>
+        <div class="form-group">
+            <form action="/book/create" method="post">
+            @csrf
+            <select class="form-select" aria-label="Default select example" name="author_id">
+                <option value="">著者を選択してください。</option>
+            </select>
+            <input type="text" name="title" value="" class="form-control" placeholder="本のタイトル" required>
+            <input type="text" name="price" value="" class="form-control" placeholder="本の金額" required>
+            <button type="submit" class="btn btn-success pull-right">追加</button>
+            </form>
+        </div>
+    </div>
 <!-- ⑤ -->
+@foreach($authors as $author)
+<option value="{{ $author->id }}">
+{{$author->name}}
+</option>
+@endforeach
 <!-- ⑥ -->
 <!-- ⑦ -->
 <!-- ⑧ -->
