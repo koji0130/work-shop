@@ -60,7 +60,20 @@
 </option>
 @endforeach
 <!-- ⑥ -->
+<!-- バリデーションの実装・エラーメッセージ追加 -->
+    @if($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
 <!-- ⑦ -->
-<!-- ⑧ -->
-<!-- ⑨ -->
-<!-- ⑩ -->
+<!-- フラッシュメッセージ追加 -->
+   @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
